@@ -72,9 +72,9 @@ class Trie
 
     void printAllWords(Trie *trie,string temp="")
     {
+        cout<<temp<<"\n";
         if(trie==NULL || trie->end_of_word)
         {
-            cout<<temp<<"\n";
             return;
         }
         else
@@ -100,6 +100,8 @@ int main()
     trie->insert("help",trie);
     trie->insert("apple",trie);
     trie->insert("apps",trie);
+
+    cout<<"\nWords which can be formed in the trie are : \n";
     trie->printAllWords(trie);
 
 }
