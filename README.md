@@ -6,4 +6,6 @@
 
 https://youtube.com/playlist?list=PLgUwDviBIf0pcIDCZnxhv0LkHf5KzG9zp
 
-### The code in this repository is different from one discussed in the video , as I have done it in my own way , I had implemented it before watching the video , the method mentioned in the video is also in file trie_striver.cpp
+### The code in this repository is different from one discussed in the video , as I have done it in my own way , I had implemented it before watching the video , the method mentioned in the video can be found at link below : 
+
+https://takeuforward.org/data-structure/implement-trie-1/
