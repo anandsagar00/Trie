@@ -3,7 +3,7 @@
 // Video : https://youtu.be/dBGUmUQhjaM?list=PLgUwDviBIf0pcIDCZnxhv0LkHf5KzG9zp
 
 /*
-The word "Trie" is an excerpt from the word "retrieval".
+The word "Trie" is an except from the word "retrieval".
 Trie is a sorted tree-based data-structure that stores the set of strings.
 It has the number of pointers equal to the number of characters of the alphabet in each node.
 It can search a word in the dictionary with the help of the word's prefix.
@@ -90,6 +90,26 @@ class Trie
             }
         }
     }
+
+    bool search(Trie *trie,string key_word,int i=0)
+    {
+        if(trie==NULL || trie->end_of_word==true)
+        return false;
+        else if(i==key_word.size()-1)
+        {
+            //if it is the last character of the word to search , then we will check if children at that character_index exists or not
+            if(trie->children[key_word[i]-'a']!=NULL)
+            return true;
+            else
+            return false;
+        }
+        else
+        {
+            //I will be forming the word by adding one character at a time
+            int character_index=key_word[i]-'a'; // this will give the result in range of 0-26
+            return search(trie->children[character_index],key_word,i+1);
+        }
+    }
 };
 
 int main()
@@ -104,4 +124,14 @@ int main()
     cout<<"\nWords which can be formed in the trie are : \n";
     trie->printAllWords(trie);
 
+    //I am searching words he , heelo , helo , hellox , hello , app ,aaply
+    cout<<"\nSearch Result : \n";
+    cout<<trie->search(trie,"he")<<"\n";
+    cout<<trie->search(trie,"heelo")<<"\n";
+    cout<<trie->search(trie,"helo")<<"\n";
+    cout<<trie->search(trie,"hellox")<<"\n";
+    cout<<trie->search(trie,"hello")<<"\n";
+    cout<<trie->search(trie,"app")<<"\n";
+    cout<<trie->search(trie,"apply")<<"\n";
+    cout<<trie->search(trie,"a")<<"\n";
 }
